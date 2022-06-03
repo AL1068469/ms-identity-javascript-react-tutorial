@@ -12,22 +12,23 @@ import { LogLevel } from "@azure/msal-browser";
  */
 export const b2cPolicies = {
     names: {
-        signUpSignIn: "b2c_1_susi",
+        signUpSignIn: "b2c_1_SignUpAndSignIn", //"b2c_1_signIn",
         forgotPassword: "b2c_1_reset",
         editProfile: "b2c_1_edit_profile"
     },
     authorities: {
+        
         signUpSignIn: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_susi",
+            authority: "https://rapso.b2clogin.com/rapso.onmicrosoft.com/b2c_1_SignUpAndSignIn",
         },
         forgotPassword: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_reset",
+            authority: "https://rapso.b2clogin.com/rapso.onmicrosoft.com/b2c_1_reset",
         },
         editProfile: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_edit_profile"
+            authority: "https://rapso.b2clogin.com/rapso.onmicrosoft.com/b2c_1_edit_profile"
         }
     },
-    authorityDomain: "fabrikamb2c.b2clogin.com"
+    authorityDomain: "rapso.b2clogin.com"
 }
 
 /**
@@ -37,7 +38,7 @@ export const b2cPolicies = {
  */
 export const msalConfig = {
     auth: {
-        clientId: "2fdd06f3-7b34-49a3-a78b-0cf1dd87878e", // This is the ONLY mandatory field that you need to supply.
+        clientId: "e09b1eb2-9090-4e30-ae72-30b732406ee0", // This is the ONLY mandatory field that you need to supply.
         authority: b2cPolicies.authorities.signUpSignIn.authority, // Use a sign-up/sign-in user-flow as a default authority
         knownAuthorities: [b2cPolicies.authorityDomain], // Mark your B2C tenant's domain as trusted.
         redirectUri: "/", // Points to window.location.origin. You must register this URI on Azure Portal/App Registration.
