@@ -55,7 +55,7 @@ export const PageLayout = (props) => {
                 <NavigationBar />
             </Navbar>
             <br />
-            <h5><center>Welcome to the Microsoft Authentication Library For React Tutorial</center></h5>
+            <h5><center>Welcome to the Microsoft Authentication Library For React Tutorial {b2cPolicies.authorityDomain}</center></h5>
             <br />
             {props.children}
             <br />
@@ -71,12 +71,16 @@ export const PageLayout = (props) => {
 };
 
 export const IdTokenClaims = (props) => {
+    console.table(props.idTokenClaims)
     return (
         <div id="token-div">
             <p><strong>Audience: </strong> {props.idTokenClaims.aud}</p>
             <p><strong>Issuer: </strong> {props.idTokenClaims.iss}</p>
             <p><strong>OID: </strong> {props.idTokenClaims.oid}</p>
             <p><strong>UPN: </strong> {props.idTokenClaims.preferred_username}</p>
+            <p><strong>given_name: </strong> {props.idTokenClaims.given_name}</p>
+            <p><strong>email: </strong> {props.idTokenClaims.email}</p>
+            <p><strong>name: </strong> {props.idTokenClaims.name}</p>
         </div>
     );
 }
